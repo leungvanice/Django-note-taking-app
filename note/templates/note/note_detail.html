@@ -1,0 +1,11 @@
+{% extends 'note/base.html' %}
+{% load markdown_deux_tags %}
+{% block content %}
+<div>
+  <h1 style="display: inline;">{{ object.title }}</h1>
+  <span style="float: right; padding-right: 10px;"><a href="{% url 'note-edit' note.pk %}">Edit note</a></span>
+</div>
+
+{{ object.content|markdown }}
+
+{% endblock content %}

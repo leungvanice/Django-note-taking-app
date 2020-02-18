@@ -1,0 +1,19 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note keeper</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'note/style.css' %}"
+    />
+  </head>
+  <body>
+    <div class="heading-div">
+      <span style="text-align: center;"><h1>Noter</h1></span>
+    </div>
+    {% block content %} {% endblock %}
+  </body>
+</html>
