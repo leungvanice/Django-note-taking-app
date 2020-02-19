@@ -1,0 +1,88 @@
+.sidebar-list-file {
+    display: block;
+}
+
+.sidebar {
+    position: fixed;
+    overflow-y: scroll;
+}
+.sidebar-actions-provided {
+    background-color: white;
+    padding-top: 10px;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.sidebar-actions-provided img {
+    height: 20px;
+    cursor: pointer;
+}
+
+.sidebar-link-container {
+    background-color: white;
+    padding-top: 10px;
+}
+
+.sidebar-link-container:hover {
+    background-color: whitesmoke;
+}
+
+.sidebar div a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.h1Link {
+    font-size: 20px;
+}
+
+.h2Link {
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.h3Link {
+    font-size: 16px;
+    margin-left: 40px;
+}
+
+.h4Link {
+    font-size: 14px;
+    margin-left: 60px;
+}
+
+.h5Link {
+    font-size: 12px;
+    margin-left: 70px;
+}
+
+.h6Link {
+    font-size: 10px;
+    margin-left: 80px;
+}
+
+@media only screen and (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+    .content {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .sidebar {
+        float: left;
+        width: 19%;
+        height: 100%;
+    }
+    .content {
+        margin-left: 20%;
+    }
+}

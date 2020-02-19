@@ -1,11 +1,59 @@
-{% extends 'note/base.html' %}
-{% load markdown_deux_tags %}
-{% block content %}
-<div>
-  <h1 style="display: inline;">{{ object.title }}</h1>
-  <span style="float: right; padding-right: 10px;"><a href="{% url 'note-edit' note.pk %}">Edit note</a></span>
-</div>
+{% load static %} {% load markdown_deux_tags %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noter</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'note/note_detail_style.css' %}"
+    />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class='sidebar-actions-provided'>
+        <button onclick="btnOnClick()">       
+            <img src="{% static 'note/folders.png' %}" id='file'></img>
+        </button>
+        <button>
+          <a href="{% url 'note-create' %}">
+            <img src="{% static 'note/newFileLogo.png' %}" id='edit'></img> 
+          </a>
+        </button>
+        <button>
+          <a href="{% url 'note-edit' note.pk %}">
+            <img src="{% static 'note/editLogo.png' %}" id='edit'></img> 
+          </a>
+        </button>
+      </div>
+      <div class="sidebar-list-outline">
+      </div>
+      <div class="sidebar-list-file">
+        {% for file in files %}
+        <div class='sidebar-link-container'><a href="{% url 'note-detail' file.pk %}" class='h1Link'>{{ file }}</a></div>
+        {% endfor %}
+      </div>
+    </div>
 
-{{ object.content|markdown }}
 
-{% endblock content %}
+
+    <!-- Content -->
+    <div class="content">
+      <div>
+        <h1 style="display: inline;">{{ object.title }}</h1>
+        <span style="float: right; padding-right: 10px;"
+          ><a href="{% url 'note-edit' note.pk %}">Edit note</a></span
+        >
+      </div>
+      
+      {{ object.content|markdown }}
+
+    </div>
+
+    <script src="{% static 'note/note_detail_js.js' %}">
+      
+    </script>
+  </body>
+</html>
