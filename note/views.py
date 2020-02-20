@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import note
 from django.views.generic import DetailView, UpdateView
 from .forms import createNoteForm, editNoteForm
 from django.urls import reverse_lazy
+from django.utils import timezone
+import datetime
 
 # Create your views here.
 def home(request): 
@@ -18,7 +20,10 @@ def createNote(request):
 
         if form.is_valid():  
             title = form.cleaned_data.get('title')
-            print(title) 
+            data = form.save(commit=False) 
+            data.created_date = timezone.localtime()
+            data.save()
+            return redirect('note-home')
     else: 
         form = createNoteForm() 
     return render(request, 'note/note_form.html', {'form': form})

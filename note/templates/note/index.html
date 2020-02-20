@@ -1,15 +1,11 @@
 {% extends 'note/base.html' %}{% load markdown_deux_tags %} {% block content %}
-{% for note in notes%}
-<h3>
-  <a href="{% url 'note-detail' note.pk %}">{{ note.title }}</a>
-</h3>
-<!-- <div class="container">
-  <div class="inside-container">
-    <h3>{{ note.title }}</h3>
-    {{ note.modified_date }}
-  </div>
-</div> -->
+<div class="container">
+  {% for note in notes%}
+  <h3>
+    <a href="{% url 'note-detail' note.pk %}">{{ note.title }}</a>
+  </h3>
 
-{% endfor %}
-<button><a href="">Create note +</a></button>
+  {% endfor %}
+  <button><a href="{% url 'note-create' %}">Create note +</a></button>
+</div>
 {% endblock content %}

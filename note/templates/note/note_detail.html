@@ -14,12 +14,17 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <div class='sidebar-actions-provided'>
+        <button>
+          <a href="{% url 'note-home' %}">
+            <img src="{% static 'note/homeLogo.png' %}" id='home'></img> 
+          </a>
+        </button>
         <button onclick="btnOnClick()">       
-            <img src="{% static 'note/folders.png' %}" id='file'></img>
+            <img src="{% static 'note/outline.png' %}" id='file'></img>
         </button>
         <button>
           <a href="{% url 'note-create' %}">
-            <img src="{% static 'note/newFileLogo.png' %}" id='edit'></img> 
+            <img src="{% static 'note/newFileLogo.png' %}" id='create'></img> 
           </a>
         </button>
         <button>
@@ -27,6 +32,7 @@
             <img src="{% static 'note/editLogo.png' %}" id='edit'></img> 
           </a>
         </button>
+        
       </div>
       <div class="sidebar-list-outline">
       </div>
@@ -43,9 +49,9 @@
     <div class="content">
       <div>
         <h1 style="display: inline;">{{ object.title }}</h1>
-        <span style="float: right; padding-right: 10px;"
+        <!-- <span style="float: right; padding-right: 10px;"
           ><a href="{% url 'note-edit' note.pk %}">Edit note</a></span
-        >
+        > -->
       </div>
       
       {{ object.content|markdown }}

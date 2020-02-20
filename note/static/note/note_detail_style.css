@@ -16,6 +16,10 @@ button {
     border: none;
     background: none;
 }
+img {
+    height: 20px;
+    width: 20px;
+}
 
 .sidebar-actions-provided img {
     height: 20px;

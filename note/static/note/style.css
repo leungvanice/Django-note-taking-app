@@ -8,5 +8,8 @@ a {
     color: black;
 }
 
-
+.container {
+    width: 80%;
+    margin: auto;
+}
 
