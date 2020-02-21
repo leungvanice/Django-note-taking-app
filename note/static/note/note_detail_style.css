@@ -6,6 +6,7 @@
     position: fixed;
     overflow-y: scroll;
 }
+
 .sidebar-actions-provided {
     background-color: white;
     padding-top: 10px;
@@ -16,6 +17,7 @@ button {
     border: none;
     background: none;
 }
+
 img {
     height: 20px;
     width: 20px;
@@ -69,6 +71,10 @@ img {
 .h6Link {
     font-size: 10px;
     margin-left: 80px;
+}
+
+.content {
+    font-size: 18px;
 }
 
 @media only screen and (max-width: 600px) {
